@@ -19,28 +19,88 @@ To write a program to perform linear search and binary search using python progr
 ## Program:
 i)	#Use a linear search method to match the item in a list.
 ```
-
+def linearSearch(array,n,k):
+    for i in range(0,n):
+        if(array[i]==k):
+            return i
+    return -1
+array=eval(input())
+k=eval(input())
+n=len(array)
+array.sort()
+result=linearSearch(array,n,k)
+if(result==-1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ",result)
 
 
 ```
 ii)	# Find the element in a list using Binary Search(Iterative Method).
 ```
-
-
+def binary(array,key,low,high):
+    while(low<=high):
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            low=mid+1
+        elif array[mid]>key:
+            high=mid-1
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found ")
+else:
+    print("Element found at index: ",result)
 
 
 
 ```
 iii)	# Find the element in a list using Binary Search (recursive Method).
 ```
-
-
-
+def binary(array,key,low,high):
+    if high>=low:
+        mid=low+(high-low)//2
+        if array[mid]==key:
+            return mid
+        elif array[mid]<key:
+            return binary(array,key,mid+1,high)
+        elif array[mid]>key:
+            return binary(array,key,low,mid-1)
+    return -1
+array=eval(input())
+key=int(input())
+array.sort()
+low,high=0,len(array)-1
+print(array)
+result=binary(array,key,low,high)
+if result==-1:
+    print("Element not found")
+else:
+    print("Element found at index: ",result)
 
 
 ```
 ## Sample Input and Output
 
+i)
+![Screenshot (252)](https://github.com/RahiniAchudhan/Search-Algorithms/assets/145742838/f65fa6cc-eb41-4668-94ae-22d7fc1d3c1e)
+
+
+ii)
+![Screenshot (253)](https://github.com/RahiniAchudhan/Search-Algorithms/assets/145742838/c05ad2e7-eb1a-4ec9-aa83-f248018aa233)
+
+
+iii)
+![Screenshot (254)](https://github.com/RahiniAchudhan/Search-Algorithms/assets/145742838/7c4664cd-d78c-4fb1-a86c-0042f3095177)
 
 
 
